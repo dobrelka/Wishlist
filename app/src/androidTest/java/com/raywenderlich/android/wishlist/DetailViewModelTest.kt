@@ -17,7 +17,9 @@ class DetailViewModelTest {
   private val wishlistDao: WishlistDao = Mockito.spy(
       Room.inMemoryDatabaseBuilder(
       InstrumentationRegistry.getInstrumentation().context,
-      WishlistDatabase::class.java).build().wishlistDao())
+      WishlistDatabase::class.java)
+          .allowMainThreadQueries()
+          .build().wishlistDao())
 
   private val viewModel = DetailViewModel(
       RepositoryImpl(wishlistDao) )
