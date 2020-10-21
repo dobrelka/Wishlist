@@ -22,6 +22,11 @@ android {
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
   }
+  testOptions {
+    unitTests {
+      includeAndroidResources = true
+    }
+  }
 }
 
 dependencies {
@@ -46,6 +51,7 @@ dependencies {
   kapt "androidx.room:room-compiler:$room_version"
 
   // TUTORIAL DEPENDENCIES HERE
+  testImplementation 'org.robolectric:robolectric:4.3'
 
   // Testing Dependencies
   testImplementation 'junit:junit:4.12'
