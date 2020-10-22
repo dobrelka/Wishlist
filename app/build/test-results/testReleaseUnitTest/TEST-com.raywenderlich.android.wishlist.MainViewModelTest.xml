@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.raywenderlich.android.wishlist.MainViewModelTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2020-10-22T07:53:52" hostname="mrblack" time="0.058">
+  <properties/>
+  <testcase name="getWishListReturnsReturnsData" classname="com.raywenderlich.android.wishlist.MainViewModelTest" time="0.048"/>
+  <testcase name="saveNewListCallsRepository" classname="com.raywenderlich.android.wishlist.MainViewModelTest" time="0.009"/>
+  <testcase name="saveNewListCallsRepositoryCorrectWithData" classname="com.raywenderlich.android.wishlist.MainViewModelTest" time="0.0"/>
+  <testcase name="getWishlistsCallsRepository" classname="com.raywenderlich.android.wishlist.MainViewModelTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
