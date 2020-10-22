@@ -1,0 +1,78 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.raywenderlich.android.wishlist"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="19"
+8-->/home/dobrelka/Wishlist/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->/home/dobrelka/Wishlist/app/src/main/AndroidManifest.xml
+10
+11    <application
+11-->/home/dobrelka/Wishlist/app/src/main/AndroidManifest.xml:5:3-27:17
+12        android:name="com.raywenderlich.android.wishlist.app.App"
+12-->/home/dobrelka/Wishlist/app/src/main/AndroidManifest.xml:6:5-28
+13        android:allowBackup="false"
+13-->/home/dobrelka/Wishlist/app/src/main/AndroidManifest.xml:7:5-32
+14        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+14-->[androidx.core:core:1.1.0-rc01] /home/dobrelka/.gradle/caches/transforms-2/files-2.1/eec6915be88c293c65f1f74e92e652a8/core-1.1.0-rc01/AndroidManifest.xml:24:18-86
+15        android:icon="@mipmap/ic_launcher"
+15-->/home/dobrelka/Wishlist/app/src/main/AndroidManifest.xml:8:5-39
+16        android:label="@string/app_name"
+16-->/home/dobrelka/Wishlist/app/src/main/AndroidManifest.xml:9:5-37
+17        android:roundIcon="@mipmap/ic_launcher_round"
+17-->/home/dobrelka/Wishlist/app/src/main/AndroidManifest.xml:10:5-50
+18        android:supportsRtl="true"
+18-->/home/dobrelka/Wishlist/app/src/main/AndroidManifest.xml:11:5-31
+19        android:theme="@style/AppTheme" >
+19-->/home/dobrelka/Wishlist/app/src/main/AndroidManifest.xml:12:5-36
+20
+21        <!-- Splash Activity -->
+22        <activity android:name="com.raywenderlich.android.wishlist.app.SplashActivity" >
+22-->/home/dobrelka/Wishlist/app/src/main/AndroidManifest.xml:15:5-21:16
+22-->/home/dobrelka/Wishlist/app/src/main/AndroidManifest.xml:15:15-49
+23            <intent-filter>
+23-->/home/dobrelka/Wishlist/app/src/main/AndroidManifest.xml:16:7-20:23
+24                <action android:name="android.intent.action.MAIN" />
+24-->/home/dobrelka/Wishlist/app/src/main/AndroidManifest.xml:17:9-61
+24-->/home/dobrelka/Wishlist/app/src/main/AndroidManifest.xml:17:17-58
+25
+26                <category android:name="android.intent.category.LAUNCHER" />
+26-->/home/dobrelka/Wishlist/app/src/main/AndroidManifest.xml:19:9-69
+26-->/home/dobrelka/Wishlist/app/src/main/AndroidManifest.xml:19:19-66
+27            </intent-filter>
+28        </activity>
+29
+30        <!-- Main Activity -->
+31        <activity android:name="com.raywenderlich.android.wishlist.MainActivity" />
+31-->/home/dobrelka/Wishlist/app/src/main/AndroidManifest.xml:24:5-46
+31-->/home/dobrelka/Wishlist/app/src/main/AndroidManifest.xml:24:15-43
+32        <activity android:name="com.raywenderlich.android.wishlist.WishlistDetailActivity" />
+32-->/home/dobrelka/Wishlist/app/src/main/AndroidManifest.xml:25:5-56
+32-->/home/dobrelka/Wishlist/app/src/main/AndroidManifest.xml:25:15-53
+33        <activity android:name="com.raywenderlich.android.wishlist.Test" />
+33-->/home/dobrelka/Wishlist/app/src/main/AndroidManifest.xml:26:5-47
+33-->/home/dobrelka/Wishlist/app/src/main/AndroidManifest.xml:26:15-35
+34
+35        <service
+35-->[androidx.room:room-runtime:2.1.0] /home/dobrelka/.gradle/caches/transforms-2/files-2.1/817255cee3dae379f14269777a70c725/room-runtime-2.1.0/AndroidManifest.xml:25:9-27:40
+36            android:name="androidx.room.MultiInstanceInvalidationService"
+36-->[androidx.room:room-runtime:2.1.0] /home/dobrelka/.gradle/caches/transforms-2/files-2.1/817255cee3dae379f14269777a70c725/room-runtime-2.1.0/AndroidManifest.xml:26:13-74
+37            android:exported="false" />
+37-->[androidx.room:room-runtime:2.1.0] /home/dobrelka/.gradle/caches/transforms-2/files-2.1/817255cee3dae379f14269777a70c725/room-runtime-2.1.0/AndroidManifest.xml:27:13-37
+38
+39        <provider
+39-->[androidx.lifecycle:lifecycle-process:2.0.0] /home/dobrelka/.gradle/caches/transforms-2/files-2.1/2a0db6d2836892fb4ac22b78663d9f57/lifecycle-process-2.0.0/AndroidManifest.xml:23:9-27:43
+40            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+40-->[androidx.lifecycle:lifecycle-process:2.0.0] /home/dobrelka/.gradle/caches/transforms-2/files-2.1/2a0db6d2836892fb4ac22b78663d9f57/lifecycle-process-2.0.0/AndroidManifest.xml:24:13-79
+41            android:authorities="com.raywenderlich.android.wishlist.lifecycle-process"
+41-->[androidx.lifecycle:lifecycle-process:2.0.0] /home/dobrelka/.gradle/caches/transforms-2/files-2.1/2a0db6d2836892fb4ac22b78663d9f57/lifecycle-process-2.0.0/AndroidManifest.xml:25:13-69
+42            android:exported="false"
+42-->[androidx.lifecycle:lifecycle-process:2.0.0] /home/dobrelka/.gradle/caches/transforms-2/files-2.1/2a0db6d2836892fb4ac22b78663d9f57/lifecycle-process-2.0.0/AndroidManifest.xml:26:13-37
+43            android:multiprocess="true" />
+43-->[androidx.lifecycle:lifecycle-process:2.0.0] /home/dobrelka/.gradle/caches/transforms-2/files-2.1/2a0db6d2836892fb4ac22b78663d9f57/lifecycle-process-2.0.0/AndroidManifest.xml:27:13-40
+44    </application>
+45
+46</manifest>
