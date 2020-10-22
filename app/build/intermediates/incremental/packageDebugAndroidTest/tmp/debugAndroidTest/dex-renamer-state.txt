@@ -1,4 +1,4 @@
-#Thu Oct 22 12:26:43 EEST 2020
+#Thu Oct 22 13:37:56 EEST 2020
 base.0=/home/dobrelka/Wishlist/app/build/intermediates/dex/debugAndroidTest/mergeDexDebugAndroidTest/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
