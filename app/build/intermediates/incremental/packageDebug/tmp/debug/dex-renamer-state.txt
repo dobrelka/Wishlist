@@ -1,4 +1,4 @@
-#Fri Oct 23 10:59:43 EEST 2020
+#Fri Oct 23 14:25:01 EEST 2020
 base.0=/home/dobrelka/Wishlist/app/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
