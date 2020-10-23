@@ -49,8 +49,14 @@ class DetailViewModelTest {
     wishlistDao.findById(wishlist.id)
             .observeForever(mockObserver)
     verify(mockObserver).onChanged(
-            wishlist.copy(wishes = wishlist.wishes + name)
-    )
+            wishlist.copy(wishes = wishlist.wishes + name))
+
+  }
+  @Test
+  fun getWishListCallsDatabase() {
+    viewModel.getWishlist(1)
+
+    verify(wishlistDao).findById(any())
   }
 
 }
