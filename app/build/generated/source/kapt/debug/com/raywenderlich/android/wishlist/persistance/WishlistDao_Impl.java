@@ -2,7 +2,7 @@ package com.raywenderlich.android.wishlist.persistance;
 
 import android.database.Cursor;
 import androidx.lifecycle.LiveData;
-import androidx.room.EntityDeletionOrUpdateAdapter;
+import androidx.room.EntityInsertionAdapter;
 import androidx.room.RoomDatabase;
 import androidx.room.RoomSQLiteQuery;
 import androidx.room.util.CursorUtil;
@@ -21,19 +21,31 @@ import java.util.concurrent.Callable;
 public final class WishlistDao_Impl implements WishlistDao {
   private final RoomDatabase __db;
 
-  private final EntityDeletionOrUpdateAdapter __deletionAdapterOfWishlist;
+  private final EntityInsertionAdapter __insertionAdapterOfWishlist;
 
   public WishlistDao_Impl(RoomDatabase __db) {
     this.__db = __db;
-    this.__deletionAdapterOfWishlist = new EntityDeletionOrUpdateAdapter<Wishlist>(__db) {
+    this.__insertionAdapterOfWishlist = new EntityInsertionAdapter<Wishlist>(__db) {
       @Override
       public String createQuery() {
-        return "DELETE FROM `Wishlist` WHERE `id` = ?";
+        return "INSERT OR REPLACE INTO `Wishlist`(`receiver`,`wishes`,`id`) VALUES (?,?,nullif(?, 0))";
       }
 
       @Override
       public void bind(SupportSQLiteStatement stmt, Wishlist value) {
-        stmt.bindLong(1, value.getId());
+        if (value.getReceiver() == null) {
+          stmt.bindNull(1);
+        } else {
+          stmt.bindString(1, value.getReceiver());
+        }
+        final String _tmp;
+        _tmp = StringListConverter.stringListToString(value.getWishes());
+        if (_tmp == null) {
+          stmt.bindNull(2);
+        } else {
+          stmt.bindString(2, _tmp);
+        }
+        stmt.bindLong(3, value.getId());
       }
     };
   }
@@ -43,7 +55,7 @@ public final class WishlistDao_Impl implements WishlistDao {
     __db.assertNotSuspendingTransaction();
     __db.beginTransaction();
     try {
-      __deletionAdapterOfWishlist.handleMultiple(wishlist);
+      __insertionAdapterOfWishlist.insert(wishlist);
       __db.setTransactionSuccessful();
     } finally {
       __db.endTransaction();

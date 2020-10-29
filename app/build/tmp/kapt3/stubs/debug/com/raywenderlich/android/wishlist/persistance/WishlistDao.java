@@ -10,7 +10,7 @@ public abstract interface WishlistDao {
     @androidx.room.Query(value = "SELECT * FROM wishlist")
     public abstract androidx.lifecycle.LiveData<java.util.List<com.raywenderlich.android.wishlist.Wishlist>> getAll();
     
-    @androidx.room.Delete()
+    @androidx.room.Insert(onConflict = androidx.room.OnConflictStrategy.REPLACE)
     public abstract void save(@org.jetbrains.annotations.NotNull()
     com.raywenderlich.android.wishlist.Wishlist... wishlist);
     

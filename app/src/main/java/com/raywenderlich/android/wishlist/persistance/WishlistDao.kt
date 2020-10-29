@@ -40,7 +40,7 @@ interface WishlistDao {
   @Query("SELECT * FROM wishlist")
   fun getAll(): LiveData<List<Wishlist>>
 
-  @Delete()
+  @Insert(onConflict = OnConflictStrategy.REPLACE)
   fun save(vararg wishlist: Wishlist)
 
   @Query("SELECT * FROM wishlist WHERE id = :id")
