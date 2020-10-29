@@ -6,6 +6,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import com.raywenderlich.android.wishlist.persistance.WishlistDao
 import com.raywenderlich.android.wishlist.persistance.WishlistDatabase
+import org.junit.After
 import org.junit.Before
 import org.junit.Rule
 import org.junit.runner.RunWith
@@ -27,6 +28,11 @@ class WishlistDaoTest {
 
     wishlistDao = wishlistDatabase.wishlistDao()
 
+  }
+
+  @After
+  fun closeDb() {
+    wishlistDatabase.close()
   }
 
 }
