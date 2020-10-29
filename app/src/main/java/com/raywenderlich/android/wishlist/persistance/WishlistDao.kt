@@ -40,5 +40,6 @@ import com.raywenderlich.android.wishlist.Wishlist
 @Dao
 interface WishlistDao {
 
+  @Query("")
   fun getAll(): LiveData<List<Wishlist>>
 }
