@@ -86,4 +86,16 @@ class WishlistDaoTest {
     assertTrue(capturedArgument.containsAll(listOf(wishlist1, wishlist2)))
   }
 
+  @Test
+  fun findByIdRetrivesCorrectData() {
+    val wishlist1 = Wishlist("Victoria", emptyList(), 1)
+    val wishlist2 = Wishlist("Tyler", emptyList(), 2)
+    wishlistDao.save(wishlist1, wishlist2)
+
+    val testObserver:Observer<Wishlist> = mock()
+
+    wishlistDao.findById(wishlist2.id).observeForever(testObserver)
+    verify(testObserver).onChanged(wishlist2)
+  }
+
 }

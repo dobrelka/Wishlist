@@ -103,32 +103,14 @@ public final class WishlistDao_Impl implements WishlistDao {
 
   @Override
   public LiveData<Wishlist> findById(final int id) {
-    final String _sql = "SELECT * FROM wishlist WHERE id = ?";
-    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    final String _sql = "";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
     int _argIndex = 1;
-    _statement.bindLong(_argIndex, id);
-    return __db.getInvalidationTracker().createLiveData(new String[]{"wishlist"}, false, new Callable<Wishlist>() {
+    return __db.getInvalidationTracker().createLiveData(new String[]{}, false, new Callable<Wishlist>() {
       @Override
       public Wishlist call() throws Exception {
         final Cursor _cursor = DBUtil.query(__db, _statement, false);
         try {
-          final int _cursorIndexOfReceiver = CursorUtil.getColumnIndexOrThrow(_cursor, "receiver");
-          final int _cursorIndexOfWishes = CursorUtil.getColumnIndexOrThrow(_cursor, "wishes");
-          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
-          final Wishlist _result;
-          if(_cursor.moveToFirst()) {
-            final String _tmpReceiver;
-            _tmpReceiver = _cursor.getString(_cursorIndexOfReceiver);
-            final List<String> _tmpWishes;
-            final String _tmp;
-            _tmp = _cursor.getString(_cursorIndexOfWishes);
-            _tmpWishes = StringListConverter.stringTostringList(_tmp);
-            final int _tmpId;
-            _tmpId = _cursor.getInt(_cursorIndexOfId);
-            _result = new Wishlist(_tmpReceiver,_tmpWishes,_tmpId);
-          } else {
-            _result = null;
-          }
           return _result;
         } finally {
           _cursor.close();
