@@ -87,7 +87,7 @@ class WishlistDaoTest {
   }
 
   @Test
-  fun findByIdRetrivesCorrectData() {
+  fun findByIdRetrievesCorrectData() {
     val wishlist1 = Wishlist("Victoria", emptyList(), 1)
     val wishlist2 = Wishlist("Tyler", emptyList(), 2)
     wishlistDao.save(wishlist1, wishlist2)

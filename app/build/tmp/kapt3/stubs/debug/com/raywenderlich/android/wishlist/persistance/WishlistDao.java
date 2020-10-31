@@ -15,6 +15,6 @@ public abstract interface WishlistDao {
     com.raywenderlich.android.wishlist.Wishlist... wishlist);
     
     @org.jetbrains.annotations.NotNull()
-    @androidx.room.Query(value = "")
+    @androidx.room.Query(value = "SELECT * FROM wishlist WHERE id = :id")
     public abstract androidx.lifecycle.LiveData<com.raywenderlich.android.wishlist.Wishlist> findById(int id);
 }
