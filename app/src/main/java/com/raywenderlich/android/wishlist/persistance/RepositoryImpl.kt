@@ -37,16 +37,18 @@ import com.raywenderlich.android.wishlist.Wishlist
 class RepositoryImpl(val wishlistDao: WishlistDao) : Repository {
 
   override fun saveWishlist(wishlist: Wishlist) {
+    wishlistDao.save(wishlist)
   }
 
   override fun getWishlists(): LiveData<List<Wishlist>> {
-    return MutableLiveData()
+    return wishlistDao.getAll()
   }
 
   override fun getWishlist(id: Int): LiveData<Wishlist> {
-    return MutableLiveData()
+    return wishlistDao.findById(id)
   }
 
   override fun saveWishlistItem(wishlist: Wishlist, name: String) {
+    wishlistDao.save(wishlist.copy(wishes = wishlist.wishes + name))
   }
 }
